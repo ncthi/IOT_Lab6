@@ -52,7 +52,7 @@ with tf.Graph().as_default():
         pnet, rnet, onet = align.detect_face.create_mtcnn(sess, "./align")
 
 
-def pedict_img(image):
+def predict_img(image):
     # base 64
     name="Unknown"
     frame = image
@@ -118,7 +118,7 @@ for message in c:
     plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     plt.show()
     try: 
-        result = pedict_img(image)
+        result = predict_img(image)
     except: 
         result = "Unknown"
     if result == "baongan": result = "Bảo Ngân"
